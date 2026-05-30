@@ -1,49 +1,35 @@
-Cisco Packet Tracer ile Akıllı Otel Ağ Tasarımı
+# Smart Hotel Network Design with Cisco Packet Tracer
+This project simulates an end-to-end complex network infrastructure required by a modern hotel enterprise using Cisco Packet Tracer. The project practically demonstrates core networking principles, including network hierarchy, IoT integration, and wide area network (WAN) connectivity.
 
-Bu proje, modern bir otel işletmesinin ihtiyaç duyduğu karmaşık ağ altyapısını, Cisco Packet Tracer üzerinde uçtan uca simüle eder. Proje; ağ hiyerarşisi, IoT entegrasyonu ve dış dünya bağlantısı (WAN) gibi temel ağ prensiplerini uygulamalı olarak sunmaktadır.
+## Technical Architecture and Features
+1. Network Segmentation (VLAN Configuration)
+To optimize network performance and security, the system is divided into logical layers:
 
-Teknik Mimari ve Özellikler
-1. Ağ Segmentasyonu (VLAN Yapılandırması)
-Ağ performansı ve güvenliğini optimize etmek amacıyla sistem mantıksal katmanlara ayrılmıştır:  
+VLAN 10 (Guest Network): An isolated layer dedicated to providing internet access for hotel guests.
 
+VLAN 30 (Staff Network): Internal communication segment for reception, kitchen, and housekeeping departments.
 
-VLAN 10 (Misafir Ağı): Müşterilerin internet erişimi için izole edilmiş katman.  
+VLAN 40 (Parking/IoT Network): A specialized segment that isolates sensor and smart display traffic from the main network.
 
+2. Server and Management Services
+Centralized servers host key services to maximize system efficiency:
 
-VLAN 30 (Personel Ağı): Resepsiyon, mutfak ve temizlik birimleri arasındaki dahili haberleşme.  
+DHCP: Automated IP address assignment for all laptops and IoT devices.
 
+DNS: Domain name resolution for the hotel's custom web address (e.g., grandmarmaraotel.com).
 
-VLAN 40 (Otopark/IoT Ağı): Sensörlerin ve akıllı ekranların trafiğini ana ağdan ayıran özel segment.  
+HTTP: A custom-designed web interface hosting internal hotel information and services.
 
-2. Sunucu ve Yönetim Hizmetleri
-Sistemin verimliliğini artırmak için merkezi bir sunucu üzerinden şu servisler aktifleştirilmiştir:  
+3. IoT and Hardware Automation
+Physical processes within the hotel are fully digitized:
 
+Smart Parking System: Real-time vehicle tracking using Microcontroller Units (MCU) and motion sensors, paired with an LCD screen providing instant occupancy updates.
 
-DHCP: Tüm laptop ve IoT cihazlarına otomatik IP ataması.  
+Digital Service Notification: Instant request delivery from smart buttons in rooms directly to staff monitoring screens (IoT Monitor).
 
+4. Security (ACL & WAN)
+WAN Simulation: Simulation of the hotel network’s connection to the outside world (External/Home network).
 
-DNS: Alan adlarını (örneğin: grandmarmaraotel.com) IP adreslerine çözümleme.  
+Access Control Lists (ACL): Firewall rules configured on the Core Switch to block unauthorized traffic and prevent external breaches into the Staff and Parking networks.
 
-
-HTTP: Otel içi bilgilendirme ve servisler için özel tasarlanmış web arayüzü.  
-
-3. IoT ve Donanım Otomasyonu
-Otel içindeki fiziksel süreçler dijitalleştirilmiştir:  
-
-
-Akıllı Otopark: MCU ve hareket sensörleri kullanılarak araç giriş-çıkış takibi ve LCD ekran üzerinden anlık boş yer bildirimi.  
-
-
-Dijital Hizmet Bildirimi: Odalardaki akıllı butonlar aracılığıyla personelin merkezi ekranlarına (IoT Monitor) anlık talep iletimi.  
-
-4. Güvenlik (ACL & WAN)
-
-WAN Simülasyonu: Otel ağının dış dünya (Ev ağı) ile olan bağlantısı simüle edilmiştir.  
-
-
-Erişim Kontrol Listesi (ACL): Core Switch üzerinde yapılandırılan firewall kuralları ile dış ağdan gelen yetkisiz erişimler (personel ve otopark ağına sızma) engellenmiştir.  
-
-Sonuç
-Bu simülasyon; VLAN yönetimi, IP yönlendirme kuralları, servis yapılandırmaları ve donanım kodlamasının (Python/MCU) bir ağ mimarisinde nasıl entegre çalıştığını kanıtlayan bütünleşik bir çalışmadır.  
-
-Bu proje İlknur Güner, Fatma Tanrıverdi ve Naz Altınbaş tarafından 2025-2026 Eğitim Öğretim Yılı Bahar Dönemi "Bilgisayar Ağlarına Giriş" dersi projesi olarak hazırlanmıştır.
+Conclusion: This simulation serves as an integrated capstone project, demonstrating how VLAN management, IP routing protocols, service configurations, and hardware programming (Python/MCU) seamlessly converge within a unified network architecture.
